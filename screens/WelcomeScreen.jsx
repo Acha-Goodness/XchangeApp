@@ -20,7 +20,7 @@ const HomeScreen = () => {
                     <Image source={logo} style={styles.img}/>
                 </View>
                 <View>
-                    <Text style={styles.logo}>XCHANGE</Text>
+                    <Text style={styles.logo}>TGWMONEY</Text>
                 </View>
             </View>
             <View style={styles.content}>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     btn:{
         backgroundColor:"black",
-        paddingVertical:20,
+        paddingVertical:15,
         marginTop:-30,
         borderRadius:30,
     },

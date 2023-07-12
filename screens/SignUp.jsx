@@ -1,42 +1,56 @@
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet, View, Text, SafeAreaView, TextInput, Pressable, Image} from "react-native";
+import { StyleSheet, View, Text, SafeAreaView, TextInput, Image, KeyboardAvoidingView, TouchableOpacity} from "react-native";
 import Logo from "../assets/logo.png";
+import { FIREBASE_AUTH } from "../firebase/" 
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
     const navigation = useNavigation();
+    const [ name, setName ] = useState("");
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const auth = FIREBASE_AUTH;
+
+    const signUp =  async () => {
+      try{
+        const response = await createUserWithEmailAndPassword(auth, email, password);
+        // alert("Registation Successful")
+        navigation.navigate("Login")
+      }catch(error){
+        console.log(error);
+        alert("Sign up failed: " + error.message);
+      }
+    }
 
     return(
         <SafeAreaView style={styles.login}>
-            <View>
-                <View style={styles.loginImg}>
-                    <Image source={Logo} style={styles.img}/>
+                <View>
+                    <View style={styles.loginImg}>
+                        <Image source={Logo} style={styles.img}/>
+                    </View>
+                    <KeyboardAvoidingView>
+                    <View >
+                        <Text style={styles.inputTxt}>User Name</Text>
+                        <TextInput type="text" value={name} placeholder="Ben Carson" style={styles.input} onChangeText={(text) => setName(text)}/>
+                    </View>
+                    <View style={styles.loginInput}>
+                        <Text style={styles.inputTxt}>Email Address</Text>
+                        <TextInput type="text" value={email} placeholder="ben@gmail.com" style={styles.input} onChangeText={(text) => setEmail(text)}/>
+                    </View>
+                    <View style={styles.loginInput}>
+                        <Text style={styles.inputTxt}>Password</Text>
+                        <TextInput type="text" value={password} placeholder="password" secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)}/>
+                    </View>
+                    <TouchableOpacity style={styles.loginBtn} onPress={signUp}>
+                        <Text style={styles.btnTxt}>Sign Up</Text>
+                    </TouchableOpacity>
+                    <View style={styles.signUp}>
+                        <Text style={styles.signUpTxt}>Already have an account? </Text>
+                        <Text style={styles.upTxt} onPress={() => navigation.navigate("Login")}>Login</Text>
+                    </View>
+                    </KeyboardAvoidingView>
                 </View>
-                <View >
-                    <Text style={styles.inputTxt}>User Name</Text>
-                    <TextInput type="text" placeholder="Ben Carson" style={styles.input}/>
-                </View>
-                <View style={styles.loginInput}>
-                    <Text style={styles.inputTxt}>Email Address</Text>
-                    <TextInput type="text" placeholder="ben@gmail.com" style={styles.input}/>
-                </View>
-                <View style={styles.loginInput}>
-                    <Text style={styles.inputTxt}>Password</Text>
-                    <TextInput type="text" placeholder="password" style={styles.input}/>
-                </View>
-                <View style={styles.loginInput}>
-                    <Text style={styles.inputTxt}>Confirm Password</Text>
-                    <TextInput type="text" placeholder="password" style={styles.input}/>
-                </View>
-                <Pressable style={styles.loginBtn}>
-                    <Text style={styles.btnTxt}>Sign Up</Text>
-                </Pressable>
-                <View style={styles.signUp}>
-                    <Text style={styles.signUpTxt}>Already have an account? </Text>
-                    <Text style={styles.upTxt} onPress={() => navigation.navigate("Login")}>Login</Text>
-                </View>
-                
-            </View>
         </SafeAreaView>
     )
 }

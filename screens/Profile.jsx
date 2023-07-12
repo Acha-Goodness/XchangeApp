@@ -5,6 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import ProfilePix from "../assets/appImg/pix.jpg";
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -27,7 +29,7 @@ const Profile = () => {
                 </View>
 
                 <View style={styles.proBalance}>
-                    <View style={styles.proPoint}>
+                    <View style={styles.proWallet}>
                         <Text style={styles.userName}>Point</Text>
                         <Text style={styles.userBlc}>N4000</Text>
                     </View>
@@ -40,45 +42,45 @@ const Profile = () => {
                 <View style={styles.proOptions}>
                     <View style={styles.proLists}>
                         <View style={styles.proItems}>
-                            <FontAwesome name="credit-card-alt" size={30} color="brown" />
+                        <FontAwesome5 name="piggy-bank" size={30} color="darkblue" />
                             <Text style={styles.proTxt}>Cards / Bank Accounts</Text>
                         </View>
-                        <MaterialIcons name="double-arrow" size={24} color="black" />
+                        <MaterialIcons name="double-arrow" size={24} color="darkblue" />
                     </View>
 
                     <View style={styles.proLists}>
                         <View style={styles.proItems}>
-                            <FontAwesome name="credit-card-alt" size={30} color="brown" />
-                            <Text style={styles.proTxt}>Cards / Bank Accounts</Text>
+                            <FontAwesome5 name="servicestack" size={30} color="darkblue" />
+                            <Text style={styles.proTxt}>Affiliate Services</Text>
                         </View>
-                        <MaterialIcons name="double-arrow" size={24} color="black" />
+                        <MaterialIcons name="double-arrow" size={24} color="darkblue" />
                     </View>
 
                     <View style={styles.proLists}>
                         <View style={styles.proItems}>
-                            <FontAwesome name="credit-card-alt" size={30} color="brown" />
-                            <Text style={styles.proTxt}>Cards / Bank Accounts</Text>
+                        <FontAwesome name="group" size={30} color="darkblue" />
+                            <Text style={styles.proTxt}>Manage Group of friends</Text>
                         </View>
-                        <MaterialIcons name="double-arrow" size={24} color="black" />
+                        <MaterialIcons name="double-arrow" size={24} color="darkblue" />
                     </View>
 
                     <View style={styles.proLists}>
                         <View style={styles.proItems}>
-                            <FontAwesome name="credit-card-alt" size={30} color="brown" />
-                            <Text style={styles.proTxt}>Cards / Bank Accounts</Text>
+                        <MaterialIcons name="security" size={30} color="darkblue" />
+                            <Text style={styles.proTxt}>Payment Security</Text>
                         </View>
-                        <MaterialIcons name="double-arrow" size={24} color="black" />
+                        <MaterialIcons name="double-arrow" size={24} color="darkblue" />
                     </View>
 
                     <View style={styles.proLists}>
                         <View style={styles.proItems}>
-                            <FontAwesome name="credit-card-alt" size={30} color="brown" />
-                            <Text style={styles.proTxt}>Cards / Bank Accounts</Text>
+                            <Ionicons name="ios-settings" size={30} color="darkblue" />
+                            <Text style={styles.proTxt}>Settings</Text>
                         </View>
-                        <MaterialIcons name="double-arrow" size={24} color="black" />
+                        <MaterialIcons name="double-arrow" size={24} color="darkblue" />
                     </View>
                 </View>
-                <Pressable style={styles.loginBtn} onPress={() => navigation.navigate("Dash Board")}>
+                <Pressable style={styles.loginBtn} onPress={() => navigation.navigate("Login")}>
                     <Text style={styles.btnTxt}>Log Out</Text>
                 </Pressable>
             </View>
@@ -123,29 +125,28 @@ const styles = StyleSheet.create({
         paddingHorizontal:5,
         backgroundColor:"white",
     },
-    proPoint:{
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-between",
-        paddingVertical:20,
-    },
     proWallet:{
         flexDirection:"row",
         alignItems:"center",
         justifyContent:"space-between",
-        paddingVertical:20,
+        paddingVertical:15,
     },
     proOptions:{
         backgroundColor:"white",
         marginTop:10,
         paddingHorizontal:5,
-        paddingVertical:20,
+        paddingVertical:11,
     },
     proLists:{
         flexDirection:"row",
         alignItems:"center",
         justifyContent:"space-between",
-        paddingVertical:15,
+        paddingVertical:18,
+        paddingHorizontal:10,
+        marginTop:8,
+        shadowColor: "black",
+        shadowOffset: {width: -2, height: 4},
+        elevation: 1,
     },
     proItems:{
         flexDirection:"row",
@@ -157,8 +158,7 @@ const styles = StyleSheet.create({
         fontWeight:900,
     },
     loginBtn:{
-        marginTop:10,
-        marginBottom:50,
+        marginBottom:23,
         backgroundColor:"black",
         paddingVertical:20,
         textAlign:"center",

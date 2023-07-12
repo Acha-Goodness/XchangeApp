@@ -11,7 +11,7 @@ const MenuBar = () => {
         <View style={styles.nav}>
             <AntDesign name="profile" size={35} color="black" onPress={() => navigation.navigate("Profile") } />
             <Pressable style={styles.navHome} onPress={() => navigation.navigate("Home")}>
-                <Ionicons name="ios-home" size={35} color="white" />
+                <Ionicons name="ios-home" size={35} color="black" />
             </Pressable>
             <MaterialIcons name="dashboard" size={35} color="black" onPress={() => navigation.navigate("Dash Board")}/>
         </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginTop:6,
     },
     navHome:{
-        backgroundColor:"black",
+        backgroundColor:"white",
         width:80,
         height:80,
         justifyContent:"center",
