@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useLayoutEffect } from "react";
-import { StyleSheet, View, Text, SafeAreaView, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity } from "react-native";
 import logo from "../assets/logo.png";
 import Xchng from "../assets/appImg/xcng.png";
 
@@ -27,16 +27,16 @@ const HomeScreen = () => {
                 <Text style={styles.contentOne}>Enjoy the ease of currency exchange with</Text>
                 <Text style={styles.contentTwo}>Good Rate</Text>
                 <Text style={styles.contentThree}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente, debitis 
-                      eveniet labore error voluptas enim laudantium autem pariatur architecto totam
+                With TGWMONEY Currency Exchange Service, you can keep up to date with currency exchange rate and learn about every world currency in our 
+                Encyclopedia. Plus, you can take the same trusted rates on-the-go with our TWGMoney Currency Exchange mobile apps.
                 </Text>
             </View>
             <View style={styles.imgCont}>
                 <Image source={Xchng} style={styles.xcng}/>
             </View>
-            <Pressable style={styles.btn} onPress={() => navigation.navigate("Login")}>
+            <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Login")}>
                 <Text style={styles.btnText}>START</Text>
-            </Pressable>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
@@ -79,6 +79,8 @@ const styles = StyleSheet.create({
     },
     contentThree:{
         textAlign:"center",
+        fontWeight:"bold",
+        fontSize:14,
     },
     imgCont:{
         justifyContent:"center",

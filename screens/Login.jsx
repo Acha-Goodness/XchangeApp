@@ -16,14 +16,14 @@ const Login = () => {
     const signIn =  async () => {
       try{
         const response = await signInWithEmailAndPassword(auth, email, password);
-        alert("LogIn Successful")
+        // alert("LogIn Successful")
         navigation.navigate("Home")
+        setEmail("");
+        setPassword("")
       }catch(error){
         alert("Sign in failed: " + error.message);
       }
     }
-
-
 
     return(
         <SafeAreaView style={styles.login}>

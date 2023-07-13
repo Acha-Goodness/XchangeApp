@@ -1,5 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+// import { Text } from 'react-native';
+// import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from "./screens/WelcomeScreen";        
@@ -11,7 +13,10 @@ import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
+
+
 export default function App() {
+
   return (
    <NavigationContainer>
      <Stack.Navigator>
@@ -26,10 +31,3 @@ export default function App() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex:1,
-//     backgroundColor:"red",
-
-//   },
-// });

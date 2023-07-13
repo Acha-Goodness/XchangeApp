@@ -21,9 +21,9 @@ const Home = () => {
             <View style={styles.hero}>
                 <ImageBackground source={heroImg} resizeMode="cover" style={styles.image}>
                     <View style={styles.content}>
-                        <Text style={styles.text1}>Bull & Bear Exchange</Text>
+                        <Text style={styles.text1}>TGW MONEY EXCHANGE</Text>
                         <Text style={styles.text2}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto velit voluptatum.
+                            Enjoy the ease of currency exchange
                         </Text>
                     </View>
                 </ImageBackground>
@@ -31,15 +31,15 @@ const Home = () => {
             <View style={styles.instruction}>
                 <Text style={styles.instTxt}>Step by step process</Text>
                 <Animatable.View animation="bounceInRight" easing="ease-in-out" style={styles.steps}>
-                    <Text style={styles.stepTxt}>Stop by a local bank</Text>
+                    <Text style={styles.stepTxt}>International money transfer</Text>
                 </Animatable.View>
 
                 <Animatable.View animation="bounceInRight" easing="ease-in-out" style={styles.steps}>
-                    <Text style={styles.stepTxt}>Consider Getting Traveler's Checks.</Text>
+                    <Text style={styles.stepTxt}>Quick and straight forward</Text>
                 </Animatable.View>
 
                 <Animatable.View animation="bounceInRight" easing="ease-in-out" style={styles.steps}>
-                    <Text style={styles.stepTxt}>Order Currency Online.</Text>
+                    <Text style={styles.stepTxt}>Very easy service to use</Text>
                 </Animatable.View>
             </View>
             <View>
